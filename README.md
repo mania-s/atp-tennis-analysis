@@ -7,28 +7,28 @@ A data analysis project exploring professional ATP (men's) tennis matches from 2
 
 ---
 
-## 📋 Overview
+## Overview
 
 Each row in the dataset is a single ATP match with general match info, both players, and betting odds. The goal of the project is to describe and visualize the data, clean up invalid rows, and answer two questions:
 
 1. Does the betting favourite really win more often and does that depend on the court surface?
 2. Does a bigger gap in ranking make the stronger player more likely to win — and is that effect stronger in best-of-5 matches?
 
-## 📊 Dataset
+## Dataset
 
 - Source: [ATP Tennis 2000–2026, Daily Update (Kaggle)](https://www.kaggle.com/datasets/dissfya/atp-tennis-2000-2023daily-pull)
 - ~68,000 matches, 17 columns grouped into: match context (tournament, surface, round), players (names, winner), and numeric fields (rankings, ranking points, betting odds)
 - Missing numeric values are encoded as `-1` in the raw data (e.g. ~23% of matches have no ranking points, ~6% have no odds). These are converted to `NaN` and cleaned before analysis
 - After cleanup, ~64,000 matches remain
 
-## 🛠️ Tools & methods
+## Tools & methods
 
 - **pandas / numpy** , data cleaning, feature engineering, aggregation
 - **matplotlib / seaborn** , visualization (histograms, box plots, scatter plots, heatmaps)
 - **scipy.stats** , binomial and chi-square hypothesis tests
 - **Jupyter Notebook** , full analysis end-to-end
 
-## 🔍 Key findings
+## Key findings
 
 ### Rankings and betting odds follow similar, right-skewed distributions
 Most matches involve players ranked in the top 200 with odds close to 1–3, but a long tail of weaker players and longer odds pulls the mean above the median.
@@ -60,11 +60,11 @@ When players are close in the rankings (gap 0 - 10) the stronger player wins ~55
 
 ![Stronger player's win rate vs ranking gap](images/winrate_vs_rank_gap.png)
 
-## ✅ Conclusion
+## Conclusion
 
 Both hypotheses held up. Betting favourites win about 70% of matches (far more than chance ) and the edge varies modestly by surface. A bigger ranking gap makes the stronger player noticeably more likely to win, and this effect is more pronounced in best-of-5 matches, where there's more room for the better player to assert themselves.
 
-## ▶️ How to run
+## How to run
 
 ```bash
 git clone https://github.com/mania-s/atp-tennis-analysis.git
